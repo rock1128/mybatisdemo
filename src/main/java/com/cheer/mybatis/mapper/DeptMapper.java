@@ -12,4 +12,6 @@ public interface DeptMapper {
     int update(Dept dept);
     int delete(Integer deptNo);
     int getCount();
+
+
 }
