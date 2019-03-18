@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间 就是接口的名字-->
+<mapper namespace="com.cheer.mybatis.mapper.EmpMapper">
+    <!--getEmp就是对应的方法名-->
+    <select id="getEmp" resultType="com.cheer.mybatis.model.Emp">
+        select * from emp where empno = #{empNo}
+    </select>
+    <select id="getList" resultType="Emp">
+        select * from emp
+    </select>
+    <insert id="insert">
+        insert into emp values(#{empNo},#{eName},#{job},#{mgr},#{hireDate},#{sal},#{com},#{deptNo})
+    </insert>
+    <update id="update">
+        update emp set ename=#{eName},job=#{job},mgr=#{mgr},hiredate=#{hireDate},sal=#{sal},com=#{com},
+        deptno=#{deptNo} where empno=#{empNo}
+    </update>
+    <delete id="delete">
+        delete from emp where empno=#{empNo}
+    </delete>
+    <select id="getCount" resultType="int">
+        select count(*) from emp
+    </select>
+
+
+</mapper>
