@@ -56,11 +56,14 @@ public class EmpMapperTest extends AbstractMapperTest{
         assertEquals(1,result);
 
     }
+
     @Test
     public void getCount(){
         EmpMapper empMapper=session.getMapper(EmpMapper.class);
         int count=empMapper.getCount();
         assertEquals(14,count);
+
+
     }
 
 
